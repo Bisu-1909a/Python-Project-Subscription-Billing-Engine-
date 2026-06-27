@@ -13,3 +13,4 @@ class Customer:
     country_code: str         
     state_code: str = ""       
     created_at: Optional[datetime] = None
+

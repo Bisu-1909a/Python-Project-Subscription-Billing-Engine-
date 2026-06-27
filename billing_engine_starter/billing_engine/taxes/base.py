@@ -1,14 +1,3 @@
-"""
-Tax calculator abstract base class + factory.
-
-✅ ABC + factory wiring is COMPLETE. Subclasses live in sibling files.
-
-Contract:
-    apply(taxable_amount, context) -> TaxBreakdown
-        Returns the breakdown of taxes (so PDFs can show line items like
-        "CGST 9% + SGST 9%"). The TOTAL is what gets added to the invoice.
-"""
-
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING

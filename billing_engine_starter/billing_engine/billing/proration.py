@@ -1,5 +1,4 @@
 """
-Proration — Day 4 stretch.
 
 Mid-cycle plan change: customer is on Plan A from period_start to period_end,
 but on `switch_date` they upgrade (or downgrade) to Plan B.
@@ -91,3 +90,4 @@ def compute_proration(
         credit_tax=credit_tax,
         charge_tax=charge_tax,
     )
+    

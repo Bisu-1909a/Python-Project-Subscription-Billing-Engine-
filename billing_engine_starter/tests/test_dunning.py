@@ -1,8 +1,3 @@
-"""Tests for DunningProcess (retry FSM) — fully implemented.
-
-Uses ScriptedGateway so failures are deterministic.
-"""
-
 from datetime import date, datetime, timedelta
 
 import pytest

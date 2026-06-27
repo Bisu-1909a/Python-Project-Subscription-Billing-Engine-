@@ -15,3 +15,4 @@ class FirstMonthFree(Discount):
             return subtotal
         
         return Money.zero(subtotal.currency)
+

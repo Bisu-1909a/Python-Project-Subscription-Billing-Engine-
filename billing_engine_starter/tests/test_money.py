@@ -1,13 +1,3 @@
-"""
-✅ FULLY WRITTEN — this is the template for the tests you will write
-   in test_pricing.py, test_discounts.py, etc.
-
-Read the names. Read the assertions. Notice:
-    - Tests are tiny and focused.
-    - One assertion per test where reasonable.
-    - Edge cases (rounding, zero, currency mismatch) get their own tests.
-    - No use of `float` anywhere.
-"""
 
 from decimal import Decimal
 

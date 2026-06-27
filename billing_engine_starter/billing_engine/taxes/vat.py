@@ -1,7 +1,3 @@
-"""
-VATCalculator — single-rate VAT (e.g. 19% in Germany).
-"""
-
 from decimal import Decimal
 
 from billing_engine.money import Money

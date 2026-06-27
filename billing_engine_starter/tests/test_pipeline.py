@@ -52,6 +52,7 @@ class TestPipeline:
         assert inv.total == Money("1000", "INR")
         assert inv.status == InvoiceStatus.DRAFT
 
+
     def test_discount_then_tax_order(self):
         # ₹1000 flat - 10% discount = ₹900 taxable - 18% GST = ₹162 tax → total ₹1062
         inv = build_invoice(
@@ -68,6 +69,7 @@ class TestPipeline:
         assert inv.discount_total == Money("100.00", "INR")
         assert inv.tax_total == Money("162.00", "INR")
         assert inv.total == Money("1062.00", "INR")
+
 
     def test_line_items_for_intra_state_gst(self):
         inv = build_invoice(
@@ -86,6 +88,7 @@ class TestPipeline:
         # Intra-state GST → two TAX components
         assert kinds.count(LineItemKind.TAX) == 2
 
+
     def test_usage_based_plan(self):
         # 500 calls * ₹0.50 = ₹250
         inv = build_invoice(
@@ -101,6 +104,7 @@ class TestPipeline:
         assert inv.subtotal == Money("250.00", "INR")
         assert inv.total == Money("250.00", "INR")
 
+
     def test_no_discount_means_no_discount_line_item(self):
         inv = build_invoice(
             subscription=_sub(), plan=_plan(),
@@ -114,6 +118,7 @@ class TestPipeline:
         )
         assert all(li.kind != LineItemKind.DISCOUNT for li in inv.line_items)
 
+
     def test_no_tax_means_no_tax_line_items(self):
         inv = build_invoice(
             subscription=_sub(), plan=_plan(),
@@ -126,6 +131,7 @@ class TestPipeline:
             invoice_count_so_far=0,
         )
         assert all(li.kind != LineItemKind.TAX for li in inv.line_items)
+
 
     def test_vat_produces_single_tax_line_item(self):
         # ₹1000 + 19% VAT = ₹1190
@@ -143,6 +149,7 @@ class TestPipeline:
         assert inv.total == Money("1190.00", "EUR")
         kinds = [li.kind for li in inv.line_items]
         assert kinds.count(LineItemKind.TAX) == 1
+
 
     def test_fixed_amount_discount(self):
         # ₹1000 - ₹200 fixed = ₹800 taxable, no tax → total ₹800

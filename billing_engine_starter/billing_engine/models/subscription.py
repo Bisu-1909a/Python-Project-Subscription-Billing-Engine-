@@ -24,3 +24,4 @@ class Subscription:
     trial_end: Optional[date] = None
     discount_id: Optional[int] = None
     past_due_since: Optional[date] = None   
+

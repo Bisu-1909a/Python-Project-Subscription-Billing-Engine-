@@ -36,6 +36,7 @@ class TestProrationDayCount:
         assert result.credit_tax == Money("0", "INR")
         assert result.charge_tax == Money("0", "INR")
 
+
     def test_first_day_credits_almost_full(self):
         # Switch on period_start → used 0 days, remaining = total.
         result = compute_proration(
@@ -49,6 +50,7 @@ class TestProrationDayCount:
         )
         assert result.credit_amount == Money("1000.00", "INR")
         assert result.charge_amount == Money("1000.00", "INR")
+
 
     def test_last_day_credits_zero(self):
         # Switch on period_end → used everything, remaining 0.
@@ -64,7 +66,9 @@ class TestProrationDayCount:
         assert result.credit_amount == Money("0.00", "INR")
         assert result.charge_amount == Money("0.00", "INR")
 
+
     def test_downgrade_credit_greater_than_charge(self):
+
         # ₹2000 → ₹1000 at midpoint
         result = compute_proration(
             old_plan_price=Money("2000", "INR"),
@@ -108,6 +112,7 @@ class TestProrationValidation:
                 tax_context=_no_tax_ctx(),
             )
 
+
     def test_switch_after_period_raises(self):
         with pytest.raises(ValueError):
             compute_proration(
@@ -119,6 +124,7 @@ class TestProrationValidation:
                 tax_calc=NoTax(),
                 tax_context=_no_tax_ctx(),
             )
+
 
     def test_currency_mismatch_raises(self):
         with pytest.raises(ValueError):

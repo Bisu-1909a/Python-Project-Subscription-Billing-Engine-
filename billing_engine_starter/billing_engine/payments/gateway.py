@@ -28,7 +28,6 @@ class PaymentGateway(ABC):
         raise NotImplementedError
 
 
-
 class ScriptedGateway(PaymentGateway):
 
     def __init__(self, results: list[PaymentResult]) -> None:

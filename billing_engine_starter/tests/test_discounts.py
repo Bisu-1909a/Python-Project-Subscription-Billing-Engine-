@@ -1,5 +1,3 @@
-"""Tests for discount strategies — fully implemented."""
-
 from decimal import Decimal
 
 import pytest

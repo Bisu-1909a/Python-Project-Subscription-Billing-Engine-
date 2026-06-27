@@ -397,3 +397,4 @@ def count_attempts_for_invoice(conn: sqlite3.Connection, invoice_id: int) -> int
         (invoice_id,),
     ).fetchone()
     return int(row["cnt"])
+

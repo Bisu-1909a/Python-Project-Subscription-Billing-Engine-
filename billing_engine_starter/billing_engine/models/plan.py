@@ -25,3 +25,4 @@ class Plan:
     billing_period: BillingPeriod
     currency: str
     config_json: str = "{}"   
+

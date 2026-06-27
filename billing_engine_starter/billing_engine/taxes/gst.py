@@ -1,15 +1,3 @@
-"""
-GSTCalculator — Indian Goods & Services Tax.
-
-The rule:
-    - If customer_state == seller_state (or seller_state is "")  =>  intra-state
-        -> charge CGST + SGST (split equally, e.g. 9% + 9% = 18%)
-    - Else  =>  inter-state
-        -> charge IGST (e.g. 18%)
-
-Customers without a state code default to IGST (safe choice).
-"""
-
 from decimal import Decimal
 
 from billing_engine.money import Money

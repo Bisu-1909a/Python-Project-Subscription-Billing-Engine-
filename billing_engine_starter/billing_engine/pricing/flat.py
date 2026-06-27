@@ -1,9 +1,3 @@
-"""
-FlatRate — same charge every period regardless of usage.
-
-Example: ₹999/month subscription, no matter how much the customer uses.
-"""
-
 from billing_engine.money import Money
 from billing_engine.pricing.base import PricingStrategy
 

@@ -1,9 +1,3 @@
-"""
-UsageBased — pay per unit consumed.
-
-Example: ₹0.50 per API call. Customer makes 1200 calls => charge = ₹600.
-"""
-
 from billing_engine.money import Money
 from billing_engine.pricing.base import PricingStrategy
 

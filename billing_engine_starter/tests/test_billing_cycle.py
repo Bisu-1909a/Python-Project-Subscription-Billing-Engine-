@@ -22,7 +22,6 @@ from tests.conftest import (
     make_flat_strategy_factory, make_discount_factory, make_no_tax_factory,
 )
 
-
 # ----------------------------------------------------------------
 # helpers
 # ----------------------------------------------------------------

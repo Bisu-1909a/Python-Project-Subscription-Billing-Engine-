@@ -54,3 +54,4 @@ class Database:
             raise
         finally:
             conn.close()
+            

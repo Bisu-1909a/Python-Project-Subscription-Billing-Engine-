@@ -24,3 +24,4 @@ class FixedAmountDiscount(Discount):
             raise ValueError("currency mismatch between subtotal and discount")
         
         return min(self.amount, subtotal)
+

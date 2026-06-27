@@ -22,3 +22,4 @@ class LedgerEntry:
     direction: LedgerDirection
     reason: str
     created_at: Optional[datetime] = None
+

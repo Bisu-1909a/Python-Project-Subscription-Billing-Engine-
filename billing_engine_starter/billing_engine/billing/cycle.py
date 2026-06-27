@@ -73,6 +73,7 @@ class BillingCycle:
         self.tax_factory = tax_factory
         self.gateway = gateway
 
+
     def run(self, as_of: date) -> BillingResult:
         result = BillingResult(0, 0, 0)
         
@@ -156,6 +157,7 @@ class BillingCycle:
             result.invoices_created += 1
 
         return result
+
 
     def upgrade_subscription(
         self,
@@ -259,3 +261,4 @@ class BillingCycle:
             self.subscription_repo.update_plan(subscription_id, new_plan_id)
 
             return invoice
+        

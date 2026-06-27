@@ -798,3 +798,4 @@ class PaymentAttemptRepository:
             # The query helper already returns the integer count directly
             count = q.count_attempts_for_invoice(conn, invoice_id)
             return int(count) if count is not None else 0
+        

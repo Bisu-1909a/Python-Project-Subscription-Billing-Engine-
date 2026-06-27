@@ -23,11 +23,6 @@ from billing_engine.taxes import NoTax, TaxContext
 
 @pytest.fixture
 def db() -> Database:
-    """A fresh, file-backed SQLite database with schema applied.
-
-    File-backed (not :memory:) so the same DB can be opened across multiple
-    short-lived connections in a single test (which BillingCycle does).
-    """
     fd, path = tempfile.mkstemp(suffix=".db")
     os.close(fd)
     database = Database(path)

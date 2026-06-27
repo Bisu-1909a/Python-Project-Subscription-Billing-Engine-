@@ -70,6 +70,7 @@ class DunningProcess:
         self.subscription_repo = subscription_repo
         self.attempt_repo = attempt_repo
 
+
     def attempt(self, invoice: Invoice, customer_id: int, now: datetime) -> DunningOutcome:
         attempt_no = self.attempt_repo.count_for_invoice(invoice.id) + 1
         result = self.gateway.charge(invoice)
@@ -132,3 +133,4 @@ class DunningProcess:
     def should_cancel(past_due_since: date, today: date, grace_days: int = 7) -> bool:
         """Helper used by BillingCycle to decide PAST_DUE → CANCELLED."""
         return (today - past_due_since).days >= grace_days
+    

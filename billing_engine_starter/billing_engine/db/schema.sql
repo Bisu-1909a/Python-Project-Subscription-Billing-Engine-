@@ -143,3 +143,4 @@ CREATE TABLE IF NOT EXISTS payment_attempts (
     next_retry_at   TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_pa_invoice ON payment_attempts(invoice_id, attempt_no);
+

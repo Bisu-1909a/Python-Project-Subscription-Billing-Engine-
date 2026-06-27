@@ -1,14 +1,3 @@
-"""End-to-end demo scenario — fully implemented.
-
-This is the Day-3 evening capstone exercise. It exercises the WHOLE system:
-    customer creation → subscription → billing cycle → payment → ledger balance.
-
-It's marked @pytest.mark.skip by default — students enable it once their
-implementation is complete, as a "final acceptance gate" for the project.
-
-To enable: delete the `@pytest.mark.skip(...)` line below.
-"""
-
 from datetime import date, datetime
 
 import pytest
